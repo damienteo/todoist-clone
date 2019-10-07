@@ -5,10 +5,11 @@ export const ProjectsContext = createContext();
 
 export const ProjectsProvider = ({ children }) => {
   const { projects, setProjects } = useProjects();
+  console.log("projects", projects);
   return (
-    <ProjectsContext.provider value={{ projects, setProjects }}>
+    <ProjectsContext.Provider value={{ projects, setProjects }}>
       {children}
-    </ProjectsContext.provider>
+    </ProjectsContext.Provider>
   );
 };
 
