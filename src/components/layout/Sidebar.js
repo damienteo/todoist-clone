@@ -34,8 +34,8 @@ export const Sidebar = () => {
       <div className="sidebar__middle">
         <span>
           <FaChevronDown />
-          <h2>Project</h2>
         </span>
+        <h2>Project</h2>
       </div>
       <ul className="sidebar__projects">
         <li>Projects will be here</li>
