@@ -13,19 +13,19 @@ export const AddProject = ({ shouldShow = false }) => {
 
   const addProject = () => {
     projectName &&
-      firebase.firestore().collection(
-        "projects"
-          .add({
-            projectId,
-            name: projectName,
-            userId: "DtKDdYFy"
-          })
-          .then(() => {
-            setProjects([]);
-            setProjectName("");
-            setShow(false);
-          })
-      );
+      firebase
+        .firestore()
+        .collection("projects")
+        .add({
+          projectId,
+          name: projectName,
+          userId: "DtKDdYFy"
+        })
+        .then(() => {
+          setProjects([]);
+          setProjectName("");
+          setShow(false);
+        });
   };
 
   return (
