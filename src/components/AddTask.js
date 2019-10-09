@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { moment } from "moment";
+import moment from "moment";
 
 import { FaRegListAlt, FaRegCalendarAlt } from "react-icons/fa";
 
@@ -7,6 +7,7 @@ import { firebase } from "../firebase";
 
 import { useSelectedProjectValue } from "../context";
 import ProjectOverlay from "./ProjectOverlay";
+import { TaskDate } from "./TaskDate";
 
 const AddTask = ({
   showAddTaskMain = true,
@@ -97,7 +98,11 @@ const AddTask = ({
             showProjectOverlay={showProjectOverlay}
             setShowProjectOverlay={setShowProjectOverlay}
           />
-          <p>Task Date</p>
+          <TaskDate
+            setTaskDate={setTaskDate}
+            showTaskDate={showTaskDate}
+            setShowTaskDate={setShowTaskDate}
+          />
           <input
             className="add-task__content"
             data-testid="add-task-content"
@@ -110,7 +115,9 @@ const AddTask = ({
             className="add-task__submit"
             data-testid="add-task"
             onClick={() => {
-              addTask();
+              showQuickAddTask
+                ? addTask() && setShowQuickAddTask(false)
+                : addTask();
             }}
           >
             Add Task
