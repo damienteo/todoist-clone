@@ -7,6 +7,7 @@ import { useProjectsValue, useSelectedProjectValue } from "../context";
 import { collatedTasksExist, getTitle, getCollatedTitle } from "../helpers";
 
 import { collatedTasks } from "../constants";
+import AddTask from "./AddTask";
 
 export const Tasks = () => {
   const { selectedProject } = useSelectedProjectValue();
@@ -45,6 +46,7 @@ export const Tasks = () => {
           </li>
         ))}
       </ul>
+      <AddTask />
     </div>
   );
 };
