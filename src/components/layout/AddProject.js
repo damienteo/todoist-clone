@@ -60,10 +60,10 @@ export const AddProject = ({ shouldShow = false }) => {
       <span className="add-project__plus">+</span>
       <span
         data-testid="add-project-action"
-        classname="add-project__test"
+        className="add-project__text"
         onClick={() => setShow(!show)}
       >
-        Add project
+        Add Project
       </span>
     </div>
   );
