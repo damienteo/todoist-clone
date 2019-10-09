@@ -543,6 +543,12 @@ header {
   }
 }
 
+.add-task__shallow,
+.add-project {
+  color: #dd4b39;
+  font-size: 18px;
+}
+
 .add-task__text,
 .add-project__text {
   display: inline-block;
@@ -555,4 +561,33 @@ header {
 .add-project__plus {
   color: #dd4b39;
   font-size: 18px;
+}
+
+.task-date {
+  @include box-overlay();
+
+  background-color: #fff;
+  width: 200px;
+  right: 0;
+
+  &__list li {
+    @include task-item();
+
+    span:first-of-type {
+      margin-right: 10px;
+
+      svg {
+        fill: grey;
+      }
+    }
+  }
+}
+
+.project-overlay {
+  @include box-overlay();
+  background-color: white;
+
+  &__list li {
+    @include task-item();
+  }
 }
