@@ -86,6 +86,11 @@ $generic-bg: #db4c3f;
   margin: 2px 5px;
 }
 
+@mixin transparent-button {
+  background-color: transparent;
+  border: 0;
+}
+
 @mixin task-item() {
   list-style-type: none;
   display: flex;
@@ -186,11 +191,26 @@ header {
             &.settings__add {
               margin-right: 15px;
               font-size: 30px;
+
+              button {
+                @include transparent-button();
+                color: white;
+                cursor: pointer;
+              }
             }
 
-            &.settings__dark-mode svg {
-              width: 20px;
-              height: 20px;
+            &.settings__darkmode {
+              button {
+                @include transparent-button();
+                color: white;
+                cursor: pointer;
+                display: flex;
+
+                svg {
+                  width: 20px;
+                  height: 20px;
+                }
+              }
             }
           }
         }
