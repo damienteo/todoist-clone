@@ -65,6 +65,7 @@ const AddTask = ({
     >
       {showAddTaskMain && (
         <div
+          aria-label="Add task"
           className="add-task__shallow"
           data-testid="show-main-action"
           onClick={() => setShowMain(!showMain)}
@@ -83,6 +84,7 @@ const AddTask = ({
               <div data-testid="quick-add-task">
                 <h2 className="header">Quick Add Task</h2>
                 <span
+                  aria-label="Cancel adding task"
                   className="add-task__cancel-x"
                   data-testid="add-task-quick-cancel"
                   onClick={() => {
@@ -114,6 +116,7 @@ const AddTask = ({
             setShowTaskDate={setShowTaskDate}
           />
           <input
+            aria-label="Enter your Task"
             className="add-task__content"
             data-testid="add-task-content"
             type="text"
@@ -141,6 +144,7 @@ const AddTask = ({
           </button>
           {!showQuickAddTask && (
             <span
+              aria-label="Cancel adding a task"
               className="add-task__cancel"
               data-testid="add-task-main-cancel"
               onClick={() => {
